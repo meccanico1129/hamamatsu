@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="google-site-verification" content="google-site-verification: googlec31e42bce3125d48.html" />
-  <title>浜松出張修理メッカニコ</title>
-  <meta name="description" content="浜松出張修理メッカニコ。中古車販売店・板金工場・個人向け。浜松市内出張無料。警告灯、始動不良、エンジン不調、電装トラブルに対応。">
+  <meta name="google-site-verification" content="google-site-verification: googlec31e42bce3125d48.html">
+  <title>浜松出張修理メッカニコ｜出張修理・故障診断専門</title>
+  <meta name="description" content="浜松出張修理メッカニコ。中古車販売店・板金工場・個人向け。浜松市内出張無料。警告灯、始動不良、エンジン不調、電装トラブルに対応。LINE・メール受付中。">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -21,7 +25,7 @@
       color: #000000;
       font-family: "MS PGothic", "ＭＳ Ｐゴシック", "MS Gothic", sans-serif;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     a {
@@ -64,7 +68,7 @@
     .header {
       background: linear-gradient(to bottom, #FFFFFF 0%, #CFE3FF 100%);
       text-align: center;
-      padding: 18px 10px 10px;
+      padding: 18px 10px 12px;
       border-bottom: 5px double #000080;
     }
 
@@ -80,6 +84,12 @@
       color: #CC0000;
       font-size: 20px;
       font-weight: bold;
+    }
+
+    .header .sub2 {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #333333;
     }
 
     .counter {
@@ -138,12 +148,14 @@
       background: #E6E6E6;
       border-right: 2px solid #999999;
       padding: 10px;
+      box-sizing: border-box;
     }
 
     .content {
       vertical-align: top;
       padding: 14px;
       background: #FFFFFF;
+      box-sizing: border-box;
     }
 
     .box {
@@ -178,7 +190,7 @@
     .main-hero {
       background: #F8F8F8;
       border: 3px ridge #B0B0B0;
-      padding: 12px;
+      padding: 14px;
       margin-bottom: 16px;
     }
 
@@ -194,6 +206,18 @@
       margin: 8px 0;
     }
 
+    .point-list {
+      margin: 14px 0;
+      padding: 10px 14px;
+      border: 1px solid #999999;
+      background: #FFFFFF;
+    }
+
+    .point-list ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
     .retro-note {
       text-align: center;
       margin: 10px 0;
@@ -202,6 +226,41 @@
       border: 2px dashed #FF0000;
       color: #CC0000;
       font-weight: bold;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      min-width: 220px;
+      text-align: center;
+      text-decoration: none;
+      padding: 12px 18px;
+      font-weight: bold;
+      border: 2px outset #666666;
+      box-sizing: border-box;
+    }
+
+    .cta-btn:visited {
+      color: #FFFFFF;
+    }
+
+    .cta-btn--line {
+      background: #06C755;
+      color: #FFFFFF !important;
+      border-color: #049a43;
+    }
+
+    .cta-btn--mail {
+      background: #003399;
+      color: #FFFFFF !important;
+      border-color: #001d66;
     }
 
     .section {
@@ -227,7 +286,15 @@
       margin-top: 0;
     }
 
-    .info-table {
+    .notice-box {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border: 1px solid #999999;
+      background: #FFFBEA;
+    }
+
+    .info-table,
+    .fee-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
@@ -235,7 +302,9 @@
     }
 
     .info-table th,
-    .info-table td {
+    .info-table td,
+    .fee-table th,
+    .fee-table td {
       border: 1px solid #666666;
       padding: 7px;
       vertical-align: top;
@@ -245,20 +314,6 @@
       width: 28%;
       background: #D9E8FF;
       text-align: left;
-    }
-
-    .fee-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    .fee-table th,
-    .fee-table td {
-      border: 1px solid #666666;
-      padding: 7px;
-      vertical-align: top;
     }
 
     .fee-table th {
@@ -304,8 +359,15 @@
       margin-top: 6px;
     }
 
-    .line-mini-btn:visited {
+    .mail-mini-btn {
+      display: inline-block;
+      background: #003399;
       color: #FFFFFF !important;
+      text-decoration: none;
+      padding: 8px 12px;
+      font-weight: bold;
+      border: 2px outset #001d66;
+      margin-top: 6px;
     }
 
     .line-contact {
@@ -439,6 +501,7 @@
       font-weight: bold;
       margin: 10px 0;
       letter-spacing: 1px;
+      word-break: break-all;
     }
 
     @media (max-width: 980px) {
@@ -479,7 +542,8 @@
         font-size: 22px;
       }
 
-      .line-btn {
+      .line-btn,
+      .cta-btn {
         width: 100%;
         box-sizing: border-box;
       }
@@ -495,16 +559,17 @@
 
   <div class="page">
     <div class="topline">
-      浜松出張修理メッカニコ｜中古車販売店・板金工場・個人向け｜修理メインの出張サービス
+      浜松出張修理メッカニコ｜出張修理・故障診断専門｜中古車販売店・板金工場・個人向け
     </div>
 
     <marquee bgcolor="#FFFFCC" scrollamount="5" behavior="scroll">
-      ★ LINEでのお問い合わせ受付中 ★ Eメールでも受付中 ★ 電話番号は準備中 ★ 浜松市内は出張無料 ★ 国産車・輸入車対応 ★ イタリア車の経験あり ★ 現金払いのみ ★ 警告灯・始動不良・エンジン不調・電装トラブルに対応 ★
+      ★ LINEでのお問い合わせ受付中 ★ Eメールでも受付中 ★ 浜松市内は出張無料 ★ 国産車・輸入車対応 ★ イタリア車の経験あり ★ 現金払いのみ ★ 警告灯・始動不良・エンジン不調・電装トラブルに対応 ★
     </marquee>
 
     <div class="header">
       <h1>浜松出張修理メッカニコ</h1>
       <div class="sub">現場で診る、現場で直す。修理メインの出張サービス</div>
+      <div class="sub2">中古車販売店・板金工場・個人のお客様まで対応しています</div>
     </div>
 
     <div class="counter">
@@ -555,7 +620,6 @@
               <span class="bigred">NEW!</span> 浜松市内の出張費無料を掲載しました。<br>
               <span class="bigred">NEW!</span> 診断料 8,000円〜 を掲載しました。<br>
               <span class="bigred">NEW!</span> カウンター横に赤い車を追加しました。<br>
-              <span class="bigred">NEW!</span> 電話番号は準備中です。<br>
               <span class="blink bigred">只今ご相談受付中！</span>
             </div>
           </div>
@@ -567,7 +631,8 @@
               <a class="line-mini-btn" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a><br><br>
 
               Eメール：<br>
-              <a class="mail" href="mailto:biueonbiue1129@gmail.com">biueonbiue1129@gmail.com</a><br><br>
+              <a class="mail" href="mailto:biueonbiue1129@gmail.com">biueonbiue1129@gmail.com</a><br>
+              <a class="mail-mini-btn" href="mailto:biueonbiue1129@gmail.com">Eメールを送る</a><br><br>
 
               <span class="small">※ 一番スムーズなのはLINEです</span>
             </div>
@@ -588,6 +653,15 @@
           </div>
 
           <div class="box">
+            <div class="box-title">対応エリア</div>
+            <div class="box-body">
+              浜松市内：<span class="bigred">出張費無料</span><br>
+              市外：距離に応じて加算<br><br>
+              <span class="small">※ 30km以上はご相談ください</span>
+            </div>
+          </div>
+
+          <div class="box">
             <div class="box-title">お支払い</div>
             <div class="box-body">
               <span class="bigred">現金のみ</span><br>
@@ -596,19 +670,12 @@
           </div>
 
           <div class="box">
-            <div class="box-title">電話（準備中）</div>
-            <div class="box-body">
-              TEL：<br>
-              <strong>準備中</strong><br><br>
-              <span class="small">※ お問い合わせはLINEまたはEメールからお願いします。</span>
-            </div>
-          </div>
-
-          <div class="box">
             <div class="box-title">ひとこと</div>
             <div class="box-body small">
               用品取付よりも、<br>
-              故障診断・修理をメインに押しています。
+              故障診断・修理をメインに押しています。<br><br>
+              電話番号は現在準備中のため、<br>
+              LINEまたはEメールでご連絡ください。
             </div>
           </div>
         </td>
@@ -623,7 +690,15 @@
 
             <div class="retro-note">
               <span class="blink">★ まずはLINEまたはEメールでご連絡ください ★</span><br>
-              スマホの方はLINEがスムーズです。電話番号は現在準備中です。
+              スマホの方はLINEがスムーズです。
+            </div>
+
+            <div class="point-list">
+              <ul>
+                <li>車が動かない・店まで持ち込めない時の現地確認に対応</li>
+                <li>搬送前に原因の当たりを付けたい時にも便利</li>
+                <li>業者さまの在庫車・納車前点検・修理後チェックにも対応</li>
+              </ul>
             </div>
 
             <p>
@@ -634,6 +709,11 @@
             <p class="center bigred">
               業者依頼歓迎 / 国産車・輸入車対応 / イタリア車の経験あり
             </p>
+
+            <div class="cta-row">
+              <a class="cta-btn cta-btn--line" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+              <a class="cta-btn cta-btn--mail" href="mailto:biueonbiue1129@gmail.com">Eメールで問い合わせる</a>
+            </div>
           </div>
 
           <div class="separator">＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊</div>
@@ -677,6 +757,10 @@
                   <td>ドラレコ、ETC、バックカメラなども相談可能ですが、あくまで補助対応です。</td>
                 </tr>
               </table>
+
+              <div class="notice-box small">
+                ※ 重整備や長時間作業が必要な場合は、現地確認後に今後の修理方針をご案内します。
+              </div>
             </div>
           </div>
 
@@ -768,6 +852,8 @@
                 <img
                   src="https://qr-official.line.me/gs/M_593kcski_GW.png?oat_content=qr"
                   alt="LINEお問い合わせQRコード"
+                  loading="lazy"
+                  referrerpolicy="no-referrer"
                 >
                 <div class="line-contact__qr-caption">LINE QRコード</div>
               </div>
@@ -872,7 +958,7 @@
                 <tr>
                   <th>LINE</th>
                   <td>
-                    <a href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">https://lin.ee/6peoYrw</a>
+                    <a href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
                   </td>
                 </tr>
                 <tr>
@@ -891,7 +977,7 @@
 
               <p class="center">
                 <a class="line-mini-btn" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">＞＞LINEで問い合わせる＜＜</a><br><br>
-                <a href="mailto:biueonbiue1129@gmail.com">＞＞Eメールで問い合わせる＜＜</a>
+                <a class="mail-mini-btn" href="mailto:biueonbiue1129@gmail.com">＞＞Eメールで問い合わせる＜＜</a>
               </p>
 
               <p class="center bigred">
