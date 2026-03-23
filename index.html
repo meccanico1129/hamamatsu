@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="google-site-verification: googlec31e42bce3125d48.html">
+  <meta name="google-site-verification" content="googlec31e42bce3125d48">
   <title>浜松出張修理メッカニコ｜出張修理・故障診断専門</title>
-  <meta name="description" content="浜松出張修理メッカニコ。個人・中古車販売店・板金工場向け。浜松市内出張無料。警告灯、始動不良、エンジン不調、電装トラブルに対応。LINE・メール受付中。">
+  <meta name="description" content="浜松出張修理メッカニコ。個人・中古車販売店・板金工場向け。浜松市内出張無料。警告灯、始動不良、エンジン不調、電装トラブルに対応。LINE・電話・メール受付中。">
   <style>
     html {
       scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -23,7 +27,7 @@
       background-size: 16px 16px;
       background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
       color: #000000;
-      font-family: "MS PGothic", "ＭＳ Ｐゴシック", "MS Gothic", sans-serif;
+      font-family: "MS PGothic", "ＭＳ Ｐゴシック", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
       font-size: 16px;
       line-height: 1.7;
     }
@@ -31,10 +35,6 @@
     a {
       color: #0000EE;
       text-decoration: underline;
-    }
-
-    a:visited {
-      color: #551A8B;
     }
 
     img,
@@ -48,7 +48,7 @@
     }
 
     .page {
-      width: 960px;
+      width: min(960px, 100%);
       margin: 0 auto;
       background: #FFFFFF;
       border-left: 4px ridge #CCCCCC;
@@ -63,6 +63,31 @@
       font-size: 13px;
       padding: 5px 10px;
       border-bottom: 3px double #FFFFFF;
+    }
+
+    .news-ticker {
+      background: #FFFFCC;
+      border-bottom: 2px solid #999999;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .news-ticker__inner {
+      display: inline-block;
+      min-width: 100%;
+      padding: 7px 0;
+      animation: tickerScroll 22s linear infinite;
+      color: #333333;
+      font-size: 14px;
+    }
+
+    @keyframes tickerScroll {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
     }
 
     .header {
@@ -139,23 +164,24 @@
     }
 
     .layout {
+      display: flex;
       width: 100%;
+      align-items: flex-start;
     }
 
     .sidebar {
       width: 220px;
-      vertical-align: top;
+      flex: 0 0 220px;
       background: #E6E6E6;
       border-right: 2px solid #999999;
       padding: 10px;
-      box-sizing: border-box;
     }
 
     .content {
-      vertical-align: top;
+      flex: 1;
+      min-width: 0;
       padding: 14px;
       background: #FFFFFF;
-      box-sizing: border-box;
     }
 
     .box {
@@ -236,31 +262,51 @@
       margin-top: 16px;
     }
 
-    .cta-btn {
+    .cta-btn,
+    .line-mini-btn,
+    .mail-mini-btn,
+    .tel-mini-btn,
+    .line-btn {
       display: inline-block;
-      min-width: 220px;
       text-align: center;
       text-decoration: none;
-      padding: 12px 18px;
       font-weight: bold;
+    }
+
+    .cta-btn {
+      min-width: 220px;
+      padding: 12px 18px;
       border: 2px outset #666666;
-      box-sizing: border-box;
     }
 
-    .cta-btn:visited {
-      color: #FFFFFF;
-    }
-
-    .cta-btn--line {
+    .cta-btn--line,
+    .line-mini-btn,
+    .line-btn--chat {
       background: #06C755;
       color: #FFFFFF !important;
       border-color: #049a43;
     }
 
-    .cta-btn--mail {
+    .cta-btn--mail,
+    .mail-mini-btn {
       background: #003399;
       color: #FFFFFF !important;
       border-color: #001d66;
+    }
+
+    .cta-btn--tel,
+    .tel-mini-btn {
+      background: #CC0000;
+      color: #FFFFFF !important;
+      border-color: #8c0000;
+    }
+
+    .line-mini-btn,
+    .mail-mini-btn,
+    .tel-mini-btn {
+      padding: 8px 12px;
+      border: 2px outset;
+      margin-top: 6px;
     }
 
     .section {
@@ -334,40 +380,19 @@
       font-size: 13px;
     }
 
-    .mail {
+    .mail,
+    .tel-link {
       word-break: break-all;
     }
 
     .blink {
-      animation: blinkAnime 1s steps(2, start) infinite;
+      animation: blinkAnime 1.5s steps(2, start) infinite;
     }
 
     @keyframes blinkAnime {
       to {
         visibility: hidden;
       }
-    }
-
-    .line-mini-btn {
-      display: inline-block;
-      background: #06C755;
-      color: #FFFFFF !important;
-      text-decoration: none;
-      padding: 8px 12px;
-      font-weight: bold;
-      border: 2px outset #049a43;
-      margin-top: 6px;
-    }
-
-    .mail-mini-btn {
-      display: inline-block;
-      background: #003399;
-      color: #FFFFFF !important;
-      text-decoration: none;
-      padding: 8px 12px;
-      font-weight: bold;
-      border: 2px outset #001d66;
-      margin-top: 6px;
     }
 
     .line-contact {
@@ -393,7 +418,6 @@
       flex-wrap: wrap;
       background: #fff;
       padding: 16px;
-      box-sizing: border-box;
     }
 
     .line-contact__text {
@@ -420,22 +444,9 @@
     }
 
     .line-btn {
-      display: inline-block;
       padding: 14px 22px;
       border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      text-align: center;
       border: 2px solid #333333;
-    }
-
-    .line-btn:visited {
-      color: #FFFFFF;
-    }
-
-    .line-btn--chat {
-      background: #06c755;
-      color: #fff;
     }
 
     .line-contact__note {
@@ -501,20 +512,22 @@
 
     @media (max-width: 980px) {
       .page {
-        width: 100%;
         margin: 0;
+        border-left: 0;
+        border-right: 0;
+        box-shadow: none;
       }
 
-      .layout,
-      .layout tbody,
-      .layout tr,
-      .layout td {
+      .layout {
         display: block;
+      }
+
+      .sidebar,
+      .content {
         width: 100%;
       }
 
       .sidebar {
-        width: auto;
         border-right: 0;
         border-bottom: 2px solid #999999;
       }
@@ -540,38 +553,43 @@
       .line-btn,
       .cta-btn {
         width: 100%;
-        box-sizing: border-box;
       }
 
       .line-contact__qr {
         display: none;
       }
+
+      .news-ticker__inner {
+        animation-duration: 16s;
+      }
     }
   </style>
 </head>
 <body>
-  <a id="top"></a>
+  <div id="top"></div>
 
   <div class="page">
     <div class="topline">
       浜松出張修理メッカニコ｜出張修理・故障診断専門｜個人・中古車販売店・板金工場向け
     </div>
 
-    <marquee bgcolor="#FFFFCC" scrollamount="5" behavior="scroll">
-      ★ LINEでのお問い合わせ受付中 ★ Eメールでも受付中 ★ 浜松市内は出張無料 ★ 国産車・輸入車対応 ★ イタリア車の経験あり ★ 現金払いのみ ★ 警告灯・始動不良・エンジン不調・電装トラブルに対応 ★
-    </marquee>
+    <div class="news-ticker" aria-label="お知らせ">
+      <div class="news-ticker__inner">
+        ★ LINEでのお問い合わせ受付中 ★ Eメールでも受付中 ★ 電話でのお問い合わせは補助対応 ★ 浜松市内は出張無料 ★ 国産車・輸入車対応 ★ イタリア車の経験あり ★ 現金払いのみ ★ 警告灯・始動不良・エンジン不調・電装トラブルに対応 ★
+      </div>
+    </div>
 
-    <div class="header">
+    <header class="header">
       <h1>浜松出張修理メッカニコ</h1>
       <div class="sub">現場で診る、現場で直す。修理メインの出張サービス</div>
       <div class="sub2">個人のお客様から中古車販売店・板金工場まで対応しています</div>
-    </div>
+    </header>
 
     <div class="counter">
       <div class="counter-wrap">
         <span>あなたは</span>
         <span class="counter-number" id="visit-counter">000000</span>
-        <span>人目の訪問者です！！</span>
+        <span>人目の訪問者です！</span>
 
         <svg class="counter-car" viewBox="0 0 120 60" aria-label="動く赤い車のイラスト" role="img">
           <rect x="18" y="24" width="68" height="18" rx="4" fill="#d40000" stroke="#660000" stroke-width="2"></rect>
@@ -587,412 +605,404 @@
       </div>
     </div>
 
-    <table class="layout">
-      <tr>
-        <td class="sidebar">
-          <div class="box">
-            <div class="box-title">MENU</div>
-            <div class="box-body">
-              <ul class="menu-list">
-                <li><a href="#service">対応サービス</a></li>
-                <li><a href="#customer">こんな方へ</a></li>
-                <li><a href="#about">メッカニコについて</a></li>
-                <li><a href="#line-contact">LINE相談・予約</a></li>
-                <li><a href="#strength">強み</a></li>
-                <li><a href="#flow">ご依頼の流れ</a></li>
-                <li><a href="#price">料金</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
-                <li><a href="#top">ページ上部へ</a></li>
-              </ul>
-            </div>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-title">MENU</div>
+          <div class="box-body">
+            <ul class="menu-list">
+              <li><a href="#service">対応サービス</a></li>
+              <li><a href="#customer">こんな方へ</a></li>
+              <li><a href="#about">メッカニコについて</a></li>
+              <li><a href="#line-contact">LINE相談・予約</a></li>
+              <li><a href="#strength">強み</a></li>
+              <li><a href="#flow">ご依頼の流れ</a></li>
+              <li><a href="#price">料金</a></li>
+              <li><a href="#contact">お問い合わせ</a></li>
+              <li><a href="#top">ページ上部へ</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">更新情報</div>
+          <div class="box-body">
+            <span class="bigred">NEW!</span> 電話番号を掲載しました。<br>
+            <span class="bigred">NEW!</span> LINE相談・予約を追加しました。<br>
+            <span class="bigred">NEW!</span> 浜松市内の出張費無料を掲載しました。<br>
+            <span class="bigred">NEW!</span> 診断料 8,000円〜 を掲載しました。<br>
+            <span class="blink bigred">只今ご相談受付中！</span>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">お問い合わせ</div>
+          <div class="box-body">
+            LINE：<br>
+            <a class="line-mini-btn" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a><br><br>
+
+            Eメール：<br>
+            <a class="mail" href="mailto:biueonbiue1129@gmail.com">biueonbiue1129@gmail.com</a><br>
+            <a class="mail-mini-btn" href="mailto:biueonbiue1129@gmail.com">Eメールを送る</a><br><br>
+
+            <span class="small">※ お問い合わせはLINEがスムーズです。電話に出られない場合はSMSまたはLINEをご利用ください。</span><br>
+            <span class="small">※ 電話：<a class="tel-link" href="tel:07036026135">070-3602-6135</a></span>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">対応内容</div>
+          <div class="box-body">
+            ・警告灯診断<br>
+            ・始動不良<br>
+            ・エンジン不調<br>
+            ・電装トラブル<br>
+            ・納車前点検<br>
+            ・軽整備<br>
+            <br>
+            <span class="small">※ 用品取付は補助対応です</span>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">対応エリア</div>
+          <div class="box-body">
+            浜松市内：<span class="bigred">出張費無料</span><br>
+            市外：距離に応じて加算<br><br>
+            <span class="small">※ 30km以上はご相談ください</span>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">お支払い</div>
+          <div class="box-body">
+            <span class="bigred">現金のみ</span><br>
+            その場でのお支払いをお願いします。
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">ひとこと</div>
+          <div class="box-body small">
+            用品取付よりも、<br>
+            故障診断・修理をメインに押しています。<br><br>
+            LINE・Eメール・電話で受付しています。<br>
+            写真や動画もあると判断がスムーズです。
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <div class="main-hero">
+          <h2>出張修理・故障診断専門</h2>
+          <p class="center">
+            個人宅、中古車販売店、板金工場へ訪問対応。<br>
+            警告灯診断、始動不良、エンジン不調、電装トラブル、納車前点検まで対応します。
+          </p>
+
+          <div class="retro-note">
+            <span class="blink">★ お問い合わせはLINEがスムーズです ★</span><br>
+            電話に出られない場合はSMSまたはLINEをご利用ください。
           </div>
 
-          <div class="box">
-            <div class="box-title">更新情報</div>
-            <div class="box-body">
-              <span class="bigred">NEW!</span> LINE相談・予約を追加しました。<br>
-              <span class="bigred">NEW!</span> 浜松市内の出張費無料を掲載しました。<br>
-              <span class="bigred">NEW!</span> 診断料 8,000円〜 を掲載しました。<br>
-              <span class="bigred">NEW!</span> カウンター横に赤い車を追加しました。<br>
-              <span class="blink bigred">只今ご相談受付中！</span>
-            </div>
+          <div class="point-list">
+            <ul>
+              <li>車が動かない・店まで持ち込めない時の現地確認に対応</li>
+              <li>搬送前に原因の当たりを付けたい時にも便利</li>
+              <li>業者さまの在庫車・納車前点検・修理後チェックにも対応</li>
+            </ul>
           </div>
 
-          <div class="box">
-            <div class="box-title">メイン連絡先</div>
-            <div class="box-body">
-              LINE：<br>
-              <a class="line-mini-btn" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a><br><br>
+          <p>
+            車をすぐ動かしたい、積載前に状態確認したい、納車前に不調の原因を見たい。
+            そんな現場ニーズに合わせた出張対応を行っています。
+          </p>
 
-              Eメール：<br>
-              <a class="mail" href="mailto:biueonbiue1129@gmail.com">biueonbiue1129@gmail.com</a><br>
-              <a class="mail-mini-btn" href="mailto:biueonbiue1129@gmail.com">Eメールを送る</a><br><br>
+          <p class="center bigred">
+            業者依頼歓迎 / 国産車・輸入車対応 / FIAT・Alfa Romeo・Abarth の経験が豊富
+          </p>
 
-              <span class="small">※ 一番スムーズなのはLINEです</span>
-            </div>
+          <div class="cta-row">
+            <a class="cta-btn cta-btn--line" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+            <a class="cta-btn cta-btn--mail" href="mailto:biueonbiue1129@gmail.com">Eメールで問い合わせる</a>
           </div>
+        </div>
 
-          <div class="box">
-            <div class="box-title">対応内容</div>
-            <div class="box-body">
-              ・警告灯診断<br>
-              ・始動不良<br>
-              ・エンジン不調<br>
-              ・電装トラブル<br>
-              ・納車前点検<br>
-              ・軽整備<br>
-              <br>
-              <span class="small">※ 用品取付は補助対応です</span>
-            </div>
-          </div>
+        <div class="separator">＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊</div>
 
-          <div class="box">
-            <div class="box-title">対応エリア</div>
-            <div class="box-body">
-              浜松市内：<span class="bigred">出張費無料</span><br>
-              市外：距離に応じて加算<br><br>
-              <span class="small">※ 30km以上はご相談ください</span>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="box-title">お支払い</div>
-            <div class="box-body">
-              <span class="bigred">現金のみ</span><br>
-              その場でのお支払いをお願いします。
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="box-title">ひとこと</div>
-            <div class="box-body small">
-              用品取付よりも、<br>
-              故障診断・修理をメインに押しています。<br><br>
-              電話番号は現在準備中のため、<br>
-              LINEまたはEメールでご連絡ください。
-            </div>
-          </div>
-        </td>
-
-        <td class="content">
-          <div class="main-hero">
-            <h2>出張修理・故障診断専門</h2>
-            <p class="center">
-              個人宅、中古車販売店、板金工場へ訪問対応。<br>
-              警告灯診断、始動不良、エンジン不調、電装トラブル、納車前点検まで対応します。
+        <div class="section" id="service">
+          <h3 class="section-title">対応サービス</h3>
+          <div class="section-body">
+            <p>
+              「用品取付の人」ではなく、
+              <strong>故障を診て修理の道筋を出せる人</strong>
+              として見せる内容にしています。
             </p>
 
-            <div class="retro-note">
-              <span class="blink">★ まずはLINEまたはEメールでご連絡ください ★</span><br>
-              スマホの方はLINEがスムーズです。
-            </div>
+            <table class="info-table">
+              <tr>
+                <th>故障診断</th>
+                <td>症状確認、ヒアリング、診断機によるコード読取、現場で可能な点検を行い原因を切り分けます。</td>
+              </tr>
+              <tr>
+                <th>警告灯点検</th>
+                <td>エンジン、ABS、エアバッグ、各種警告灯の内容を確認し、緊急性や優先順位を整理します。</td>
+              </tr>
+              <tr>
+                <th>始動不良対応</th>
+                <td>バッテリー上がりだけでなく、充電系・電源系・制御系の不具合も含めて確認します。</td>
+              </tr>
+              <tr>
+                <th>エンジン不調</th>
+                <td>アイドリング不調、失火、吹け上がり不良、振動などの症状確認と軽作業に対応します。</td>
+              </tr>
+              <tr>
+                <th>電装トラブル</th>
+                <td>灯火類、ヒューズ、リレー、充電系、配線まわりの不具合確認と簡易修理に対応します。</td>
+              </tr>
+              <tr>
+                <th>納車前点検・軽整備</th>
+                <td>在庫車や納車前車両の点検、現場で可能な部品交換や軽整備にも対応します。</td>
+              </tr>
+              <tr>
+                <th>用品取付</th>
+                <td>ドラレコ、ETC、バックカメラなども相談可能ですが、あくまで補助対応です。</td>
+              </tr>
+            </table>
 
-            <div class="point-list">
-              <ul>
-                <li>車が動かない・店まで持ち込めない時の現地確認に対応</li>
-                <li>搬送前に原因の当たりを付けたい時にも便利</li>
-                <li>業者さまの在庫車・納車前点検・修理後チェックにも対応</li>
-              </ul>
+            <div class="notice-box small">
+              ※ 現地での診断・点検を行い、必要に応じて軽整備まで対応します。<br>
+              ※ 点検結果によっては認証工場での整備が必要となる場合があります。<br>
+              ※ その際は提携認証工場での作業として、事前に内容と金額をご案内したうえで進めます。<br>
+              ※ 重整備や長時間作業が必要な場合は、現地確認後に今後の修理方針をご案内します。
             </div>
+          </div>
+        </div>
 
+        <div class="section" id="customer">
+          <h3 class="section-title">こんな方へ</h3>
+          <div class="section-body">
+            <ul>
+              <li><strong>個人のお客様</strong>：車が動かない、店まで行けない、まず状態だけでも知りたいときに。</li>
+              <li><strong>中古車販売店さま</strong>：仕入れ車、在庫車、納車前車両の不調確認や一次診断に。</li>
+              <li><strong>板金工場さま</strong>：修理後の警告灯、始動不良、電装系トラブルの確認に。</li>
+            </ul>
             <p>
-              車をすぐ動かしたい、積載前に状態確認したい、納車前に不調の原因を見たい。
-              そんな現場ニーズに合わせた出張対応を行っています。
+              外注整備先へ運ぶ前に現場で原因の当たりを付けたいケース、
+              搬送前の症状確認をしたいケースにも向いています。
+            </p>
+          </div>
+        </div>
+
+        <div class="section" id="about">
+          <h3 class="section-title">メッカニコについて</h3>
+          <div class="section-body">
+            <p class="bigred">イタリア車に強く、現場に強い。出張修理を軸に対応します。</p>
+            <p>
+              国産車5年、輸入車ディーラーで13年、建設機械整備で6年。<br>
+              国産車から輸入車、そして重機まで、幅広い現場で積み重ねてきた経験が今の仕事の土台です。
+            </p>
+            <p>
+              建設機械整備では、出張修理をメインに数多くの現場を経験してきました。<br>
+              現場ごとに異なる状況を見極め、その場で最善の判断をしながら修理を進める対応力は、大きな強みのひとつです。
+            </p>
+            <p>
+              イタリア車特有の繊細さやクセを理解したうえで、その現場対応力を活かし、
+              出張先でも丁寧かつ的確な修理・整備を行います。
+            </p>
+            <p>
+              出張修理ならではの柔軟さと確かな技術で、お客様の大切な一台を支えます。
+            </p>
+          </div>
+        </div>
+
+        <section class="line-contact" id="line-contact">
+          <h3 class="line-contact__title">LINE相談・点検予約</h3>
+          <div class="line-contact__inner">
+            <div class="line-contact__text">
+              <h4>LINEで修理相談・点検予約できます</h4>
+              <p>
+                お問い合わせはLINEがスムーズです。<br>
+                <strong>車種・年式・症状・警告灯の有無・始動可否・現在地・希望日時</strong>をお送りください。<br>
+                内容確認後、出張対応可否と概算をご案内いたします。<br>
+                電話に出られない場合は、SMSまたはLINEをご利用ください。
+              </p>
+
+              <div class="line-contact__buttons">
+                <a class="line-btn line-btn--chat" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+              </div>
+
+              <p class="line-contact__note">
+                スマホの方はボタンからそのままLINEでご連絡ください。PCの方はQRコードから追加できます。
+              </p>
+
+              <div class="line-contact__guide">
+                <p><strong>ご連絡の際は、以下を送っていただくとスムーズです。</strong></p>
+                <ul>
+                  <li>車種</li>
+                  <li>年式</li>
+                  <li>症状</li>
+                  <li>警告灯の有無</li>
+                  <li>始動可否</li>
+                  <li>現在地</li>
+                  <li>希望日時</li>
+                  <li>写真や動画</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="line-contact__qr">
+              <img src="https://qr-official.line.me/gs/M_593kcski_GW.png?oat_content=qr" alt="LINEお問い合わせQRコード" loading="lazy" referrerpolicy="no-referrer">
+              <div class="line-contact__qr-caption">LINE QRコード</div>
+            </div>
+          </div>
+        </section>
+
+        <div class="section" id="strength">
+          <h3 class="section-title">強み</h3>
+          <div class="section-body">
+            <ul>
+              <li>修理メインの現場対応</li>
+              <li>業者依頼歓迎</li>
+              <li>FIAT・Alfa Romeo・Abarth の経験が豊富</li>
+              <li>国産車・輸入車対応</li>
+              <li>現場で可能な範囲はそのまま修理</li>
+            </ul>
+            <p>
+              「とりあえず交換」ではなく、
+              <strong>症状を見て、原因を切り分けて、修理の方向を出す</strong>
+              ことを重視しています。
+            </p>
+          </div>
+        </div>
+
+        <div class="section" id="flow">
+          <h3 class="section-title">ご依頼の流れ</h3>
+          <div class="section-body">
+            <ol>
+              <li>まずはLINEまたはEメールでお問い合わせ</li>
+              <li>車種、年式、症状、現在地を確認</li>
+              <li>現地へ訪問して診断</li>
+              <li>その場で可能な範囲を説明・見積</li>
+              <li>対応可能な内容はその場で修理</li>
+            </ol>
+            <p class="small">
+              ※ まずはLINEまたはEメールでご連絡ください。<br>
+              ※ 出張中など電話に出られない場合があります。電話がつながらない場合はSMSまたはLINEをご利用ください。<br>
+              ※ 重整備や長時間作業が必要な場合は、今後の修理方針をご案内します。
+            </p>
+          </div>
+        </div>
+
+        <div class="section" id="price">
+          <h3 class="section-title">料金のご案内</h3>
+          <div class="section-body">
+            <p class="bigred">出張費と診断料を分けて明記しています。</p>
+
+            <table class="fee-table">
+              <tr>
+                <th>項目</th>
+                <th>料金</th>
+              </tr>
+              <tr>
+                <td>浜松市内 出張費</td>
+                <td><strong>無料</strong></td>
+              </tr>
+              <tr>
+                <td>市外 10〜20km</td>
+                <td>2,000円</td>
+              </tr>
+              <tr>
+                <td>市外 20〜30km</td>
+                <td>3,000円</td>
+              </tr>
+              <tr>
+                <td>診断料</td>
+                <td><strong>8,000円〜</strong></td>
+              </tr>
+              <tr>
+                <td>作業料</td>
+                <td>内容に応じてお見積り</td>
+              </tr>
+              <tr>
+                <td>部品代</td>
+                <td>別途</td>
+              </tr>
+              <tr>
+                <td>お支払い方法</td>
+                <td><strong>現金のみ</strong></td>
+              </tr>
+            </table>
+
+            <p class="small">
+              ※ 現地確認後に正式見積となる場合があります。<br>
+              ※ 30km以上の出張費はご相談ください。
+            </p>
+          </div>
+        </div>
+
+        <div class="section" id="contact">
+          <h3 class="section-title">お問い合わせ</h3>
+          <div class="section-body">
+            <p class="bigred">
+              LINE・Eメールでのお問い合わせがスムーズです。
+            </p>
+            <p>
+              お問い合わせはLINEがスムーズです。<br>
+              「車種」「年式」「症状」「警告灯の有無」「始動可否」「現在地」「希望日時」を分かる範囲でお知らせください。<br>
+              内容確認後、出張対応可否と概算をご案内いたします。<br>
+              電話に出られない場合は、SMSまたはLINEをご利用ください。
+            </p>
+
+            <div class="notice-box small">
+              ※ 点検結果によっては認証工場での整備が必要となる場合があります。<br>
+              ※ その際は提携認証工場での作業として、事前に内容と金額をご案内したうえで進めます。
+            </div>
+
+            <table class="info-table">
+              <tr>
+                <th>LINE</th>
+                <td><a href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a></td>
+              </tr>
+              <tr>
+                <th>Eメール</th>
+                <td><a class="mail" href="mailto:biueonbiue1129@gmail.com">biueonbiue1129@gmail.com</a></td>
+              </tr>
+              <tr>
+                <th>お支払い方法</th>
+                <td>現金のみ</td>
+              </tr>
+            </table>
+
+            <p class="center">
+              <a class="line-mini-btn" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">＞＞LINEで問い合わせる＜＜</a><br><br>
+              <a class="mail-mini-btn" href="mailto:biueonbiue1129@gmail.com">＞＞Eメールで問い合わせる＜＜</a>
+            </p>
+
+            <p class="center small">
+              電話：<a class="tel-link" href="tel:07036026135">070-3602-6135</a><br>
+              ※ 電話に出られない場合があります。SMSまたはLINEをご利用ください。
             </p>
 
             <p class="center bigred">
-              業者依頼歓迎 / 国産車・輸入車対応 / イタリア車の経験あり
+              <span class="blink">ご相談お待ちしています！</span>
             </p>
-
-            <div class="cta-row">
-              <a class="cta-btn cta-btn--line" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
-              <a class="cta-btn cta-btn--mail" href="mailto:biueonbiue1129@gmail.com">Eメールで問い合わせる</a>
-            </div>
           </div>
+        </div>
 
-          <div class="separator">＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊</div>
+        <div class="separator">＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊</div>
 
-          <div class="section" id="service">
-            <h3 class="section-title">対応サービス</h3>
-            <div class="section-body">
-              <p>
-                「用品取付の人」ではなく、
-                <strong>故障を診て修理の道筋を出せる人</strong>
-                として見せる内容にしています。
-              </p>
+        <p class="center small">
+          このページはレトロなホームページ風デザインで作成しています。
+        </p>
+      </main>
+    </div>
 
-              <table class="info-table">
-                <tr>
-                  <th>故障診断</th>
-                  <td>症状確認、ヒアリング、診断機によるコード読取、現場で可能な点検を行い原因を切り分けます。</td>
-                </tr>
-                <tr>
-                  <th>警告灯点検</th>
-                  <td>エンジン、ABS、エアバッグ、各種警告灯の内容を確認し、緊急性や優先順位を整理します。</td>
-                </tr>
-                <tr>
-                  <th>始動不良対応</th>
-                  <td>バッテリー上がりだけでなく、充電系・電源系・制御系の不具合も含めて確認します。</td>
-                </tr>
-                <tr>
-                  <th>エンジン不調</th>
-                  <td>アイドリング不調、失火、吹け上がり不良、振動などの症状確認と軽作業に対応します。</td>
-                </tr>
-                <tr>
-                  <th>電装トラブル</th>
-                  <td>灯火類、ヒューズ、リレー、充電系、配線まわりの不具合確認と簡易修理に対応します。</td>
-                </tr>
-                <tr>
-                  <th>納車前点検・軽整備</th>
-                  <td>在庫車や納車前車両の点検、現場で可能な部品交換や軽整備にも対応します。</td>
-                </tr>
-                <tr>
-                  <th>用品取付</th>
-                  <td>ドラレコ、ETC、バックカメラなども相談可能ですが、あくまで補助対応です。</td>
-                </tr>
-              </table>
-
-              <div class="notice-box small">
-                ※ 現地での診断・点検を行い、必要に応じて軽整備まで対応します。<br>
-                ※ 点検結果によっては認証工場での整備が必要となる場合があります。<br>
-                ※ その際は提携認証工場での作業として、事前に内容と金額をご案内したうえで進めます。<br>
-                ※ 重整備や長時間作業が必要な場合は、現地確認後に今後の修理方針をご案内します。
-              </div>
-            </div>
-          </div>
-
-          <div class="section" id="customer">
-            <h3 class="section-title">こんな方へ</h3>
-            <div class="section-body">
-              <ul>
-                <li><strong>個人のお客様</strong>：車が動かない、店まで行けない、まず状態だけでも知りたいときに。</li>
-                <li><strong>中古車販売店さま</strong>：仕入れ車、在庫車、納車前車両の不調確認や一次診断に。</li>
-                <li><strong>板金工場さま</strong>：修理後の警告灯、始動不良、電装系トラブルの確認に。</li>
-              </ul>
-              <p>
-                外注整備先へ運ぶ前に現場で原因の当たりを付けたいケース、
-                搬送前の症状確認をしたいケースにも向いています。
-              </p>
-            </div>
-          </div>
-
-          <div class="section" id="about">
-            <h3 class="section-title">メッカニコについて</h3>
-            <div class="section-body">
-              <p class="bigred">イタリア車に強く、現場に強い。出張修理を軸に対応します。</p>
-              <p>
-                国産車5年、輸入車ディーラーで13年、建設機械整備で6年。<br>
-                国産車から輸入車、そして重機まで、幅広い現場で積み重ねてきた経験が今の仕事の土台です。
-              </p>
-              <p>
-                建設機械整備では、出張修理をメインに数多くの現場を経験してきました。<br>
-                現場ごとに異なる状況を見極め、その場で最善の判断をしながら修理を進める対応力は、大きな強みのひとつです。
-              </p>
-              <p>
-                イタリア車特有の繊細さやクセを理解したうえで、その現場対応力を活かし、
-                出張先でも丁寧かつ的確な修理・整備を行います。
-              </p>
-              <p>
-                出張修理ならではの柔軟さと確かな技術で、お客様の大切な一台を支えます。
-              </p>
-            </div>
-          </div>
-
-          <section class="line-contact" id="line-contact">
-            <h3 class="line-contact__title">LINE相談・点検予約</h3>
-            <div class="line-contact__inner">
-              <div class="line-contact__text">
-                <h4>LINEで修理相談・点検予約できます</h4>
-                <p>
-                  イタリア車を中心に、修理相談・点検予約・見積依頼をLINEで受け付けています。<br>
-                  <strong>車種・年式・症状・ご希望日時</strong>を送っていただくとご案内がスムーズです。<br>
-                  故障箇所の<strong>写真や動画</strong>も歓迎です。
-                </p>
-
-                <div class="line-contact__buttons">
-                  <a
-                    class="line-btn line-btn--chat"
-                    href="https://lin.ee/6peoYrw"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LINEで相談する
-                  </a>
-                </div>
-
-                <p class="line-contact__note">
-                  スマホの方はボタンからそのままLINEでご連絡ください。PCの方はQRコードから追加できます。
-                </p>
-
-                <div class="line-contact__guide">
-                  <p><strong>ご連絡の際は、以下を送っていただくとスムーズです。</strong></p>
-                  <ul>
-                    <li>車種</li>
-                    <li>年式</li>
-                    <li>症状</li>
-                    <li>希望日時</li>
-                    <li>写真や動画</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="line-contact__qr">
-                <img
-                  src="https://qr-official.line.me/gs/M_593kcski_GW.png?oat_content=qr"
-                  alt="LINEお問い合わせQRコード"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                >
-                <div class="line-contact__qr-caption">LINE QRコード</div>
-              </div>
-            </div>
-          </section>
-
-          <div class="section" id="strength">
-            <h3 class="section-title">強み</h3>
-            <div class="section-body">
-              <ul>
-                <li>修理メインの現場対応</li>
-                <li>業者依頼歓迎</li>
-                <li>国産車・輸入車対応</li>
-                <li>イタリア車の経験あり</li>
-                <li>現場で可能な範囲はそのまま修理</li>
-              </ul>
-              <p>
-                「とりあえず交換」ではなく、
-                <strong>症状を見て、原因を切り分けて、修理の方向を出す</strong>
-                ことを重視しています。
-              </p>
-            </div>
-          </div>
-
-          <div class="section" id="flow">
-            <h3 class="section-title">ご依頼の流れ</h3>
-            <div class="section-body">
-              <ol>
-                <li>まずはLINEまたはEメールでお問い合わせ</li>
-                <li>車種、年式、症状、現在地を確認</li>
-                <li>現地へ訪問して診断</li>
-                <li>その場で可能な範囲を説明・見積</li>
-                <li>対応可能な内容はその場で修理</li>
-              </ol>
-              <p class="small">
-                ※ 電話番号は現在準備中です。<br>
-                ※ 重整備や長時間作業が必要な場合は、今後の修理方針をご案内します。
-              </p>
-            </div>
-          </div>
-
-          <div class="section" id="price">
-            <h3 class="section-title">料金のご案内</h3>
-            <div class="section-body">
-              <p class="bigred">出張費と診断料を分けて明記しています。</p>
-
-              <table class="fee-table">
-                <tr>
-                  <th>項目</th>
-                  <th>料金</th>
-                </tr>
-                <tr>
-                  <td>浜松市内 出張費</td>
-                  <td><strong>無料</strong></td>
-                </tr>
-                <tr>
-                  <td>市外 10〜20km</td>
-                  <td>2,000円</td>
-                </tr>
-                <tr>
-                  <td>市外 20〜30km</td>
-                  <td>3,000円</td>
-                </tr>
-                <tr>
-                  <td>診断料</td>
-                  <td><strong>8,000円〜</strong></td>
-                </tr>
-                <tr>
-                  <td>作業料</td>
-                  <td>内容に応じてお見積り</td>
-                </tr>
-                <tr>
-                  <td>部品代</td>
-                  <td>別途</td>
-                </tr>
-                <tr>
-                  <td>お支払い方法</td>
-                  <td><strong>現金のみ</strong></td>
-                </tr>
-              </table>
-
-              <p class="small">
-                ※ 現地確認後に正式見積となる場合があります。<br>
-                ※ 30km以上の出張費はご相談ください。
-              </p>
-            </div>
-          </div>
-
-          <div class="section" id="contact">
-            <h3 class="section-title">お問い合わせ</h3>
-            <div class="section-body">
-              <p class="bigred">
-                メインのご連絡はLINEまたはEメールでお願いします。
-              </p>
-              <p>
-                「車種」「年式」「症状」「現在地」を分かる範囲でお知らせください。<br>
-                業者さまは、在庫車・納車前・修理後などの状況も合わせてご連絡ください。<br>
-                写真や動画も送っていただけるとスムーズです。
-              </p>
-
-              <div class="notice-box small">
-                ※ 点検結果によっては認証工場での整備が必要となる場合があります。<br>
-                ※ その際は提携認証工場での作業として、事前に内容と金額をご案内したうえで進めます。
-              </div>
-
-              <table class="info-table">
-                <tr>
-                  <th>LINE</th>
-                  <td>
-                    <a href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Eメール</th>
-                  <td><a class="mail" href="mailto:biueonbiue1129@gmail.com">biueonbiue1129@gmail.com</a></td>
-                </tr>
-                <tr>
-                  <th>電話</th>
-                  <td><strong>準備中</strong></td>
-                </tr>
-                <tr>
-                  <th>お支払い方法</th>
-                  <td>現金のみ</td>
-                </tr>
-              </table>
-
-              <p class="center">
-                <a class="line-mini-btn" href="https://lin.ee/6peoYrw" target="_blank" rel="noopener noreferrer">＞＞LINEで問い合わせる＜＜</a><br><br>
-                <a class="mail-mini-btn" href="mailto:biueonbiue1129@gmail.com">＞＞Eメールで問い合わせる＜＜</a>
-              </p>
-
-              <p class="center bigred">
-                <span class="blink">ご相談お待ちしています！</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="separator">＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊</div>
-
-          <p class="center small">
-            このページはレトロなホームページ風デザインで作成しています。
-          </p>
-        </td>
-      </tr>
-    </table>
-
-    <div class="footer">
+    <footer class="footer">
       © 浜松出張修理メッカニコ<br>
       <span class="small">出張修理 / 故障診断 / 業者歓迎 / 個人対応</span><br>
       <a href="#top">[ページの先頭へ戻る]</a>
-    </div>
+    </footer>
   </div>
 
   <script>
@@ -1000,6 +1010,10 @@
       const namespace = 'hamamatsu-meccanico';
       const counterName = 'top-page-total';
       const counterEl = document.getElementById('visit-counter');
+
+      if (!counterEl) return;
+
+      counterEl.textContent = 'LOADING';
 
       fetch('https://api.counterapi.dev/v1/' + namespace + '/' + counterName + '/up', {
         cache: 'no-store'
@@ -1014,8 +1028,9 @@
           const count = typeof data.count === 'number' ? data.count : 0;
           counterEl.textContent = String(count).padStart(6, '0');
         })
-        .catch(function () {
-          counterEl.textContent = '------';
+        .catch(function (error) {
+          console.error(error);
+          counterEl.textContent = '000000';
         });
     });
   </script>
